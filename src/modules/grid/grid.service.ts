@@ -18,9 +18,7 @@ export class GridService {
   }
 
   async getById(id: string) {
-    return this.gridModel.findOne({
-      id,
-    });
+    return this.gridModel.findById(id);
   }
 
   async updateById(id: string, partialEntity: Partial<Omit<Grid, 'id'>>) {

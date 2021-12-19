@@ -23,12 +23,7 @@ export class CodeService {
   }
 
   async getById(id: string) {
-    return this.codeModel
-      .findOne({
-        id,
-      })
-      .populate('grid')
-      .exec();
+    return this.codeModel.findById(id).populate('grid').exec();
   }
 
   async updateById(id: string, partialEntity: Partial<Code>) {
